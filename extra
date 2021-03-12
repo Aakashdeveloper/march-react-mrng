@@ -70,3 +70,61 @@ Step to instal package
 ///////////
 > Go inside the folder using cmd/terminal
 > npm i packagename
+
+/////////////
+step to generate react application
+///////////
+#window
+
+##one time step in new laptop##
+> open cmd as admin
+> npm i -g create-react-app
+
+## Every Time you want new app ##
+> open cmd 
+> go inside the folder
+> create-react-app appname
+
+> go inside the folder using cmd
+> npm start
+
+#mac
+
+##one time step in new laptop##
+> open terminal
+> sudo npm i -g create-react-app
+
+## Every Time you want new app ##
+> open cmd 
+> go inside the folder
+> create-react-app appname
+
+> go inside the folder using cmd
+> npm start
+
+
+////////////////////
+> Functional
+    > Display component
+    > Dumb component
+    > We don't write logic here
+    > Cannot maintain State
+
+> ClassComponent
+    > Logical component
+    > We can call api as well as Display
+    > we can write logic
+    > We can Maintain State
+
+> HooksComponent
+
+
+
+function add(a,b){
+    var out = [a,b]
+    return out
+}
+
+
+add(1,2)
+[1,2]
