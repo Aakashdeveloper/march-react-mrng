@@ -128,3 +128,19 @@ function add(a,b){
 
 add(1,2)
 [1,2]
+
+////////////////
+State
+> act like a local variable
+> any data interaction happen through state
+> state can be updated (mutable)
+> scope of state will be in same component only
+
+Props
+> is a way to transfer data
+> data can be transfer from one nested component to other
+> immutable (we cannot change data in props)
+
+Map
+filter
+indexof
