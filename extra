@@ -144,3 +144,21 @@ Props
 Map
 filter
 indexof
+
+var a = [5,3,5,6,7,2,5,7,8,4,3,2]
+a.map((data) => {return data*2})
+[10, 6, 10, 12, 14, 4, 10, 14, 16, 8, 6, 4]
+
+var a = [5,3,5,6,7,2,5,7,8,4,3,2]
+a.filter((data) => {return data>5})
+[6, 7, 7, 8]
+
+var a = [0,1,2,3]
+a.map((data) => {return data*2})
+[0, 2, 4, 6]
+
+a.filter((data) => {return data*2})
+[1, 2, 3]
+
+parent => child  (props)
+child  => parent (props with function)
