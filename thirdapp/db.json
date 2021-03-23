@@ -1,0 +1,18 @@
+{
+  "booking": [
+    {
+      "id": 50,
+      "hotel_name": "The Corinthians Resort",
+      "name": "Bhumika",
+      "phone": "7675776686",
+      "cost": "4924"
+    },
+    {
+      "id": 49269,
+      "hotel_name": "JW Marriott Chandigarh",
+      "name": "Karan",
+      "phone": "757657657",
+      "cost": "6599"
+    }
+  ]
+}

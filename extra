@@ -191,3 +191,16 @@ withRouter
 
 
 npm i react-router-dom axios react-tabs
+
+//es5
+function add(a,b){
+    return a+b
+}
+
+//es6
+var add = (a,b) => {return a+b}
+
+////////////
+mock Api
+> npm i -g json-server
+> json-server --watch db.json --port 8900
