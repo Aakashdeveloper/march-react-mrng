@@ -26,3 +26,24 @@ const Header = (props) => {
 }
 
 export default Header;
+
+
+function flattenObj(obj){
+    var output = {}
+    for(var i in obj){
+    if(!obj.hasOwnProperty(i)) continue;
+    if(typeof obj[i] == 'object') {
+    var fobject = flattenObj(obj[i]);
+        for(var out in fobject){
+            if(!obj.hasOwnProperty(i)) continue;
+            output[i+":"+out]  = fobject[out]
+        }
+    }else{
+        output[i]= obj[i];
+    }
+   }
+    
+   return output;
+}
+
+{key1:key2: 2, key1:key3:key4: 4, key1:key5:key6:key7: 7}
