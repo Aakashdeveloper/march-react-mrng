@@ -19,6 +19,7 @@ Depolyment
 Github
 React_hooks -1
 React-Redux =1
+
 React-Redux =1
 Basic React Native=1
 Testing Jest Enzime
@@ -226,3 +227,6 @@ mock Api
 (Header) => {'x-access-token':'token value from login'}
 
 https://docs.github.com/en/developers/apps/authorizing-oauth-apps
+
+{graphQl}
+https://www.youtube.com/c/DeveloperFunnel/videos
