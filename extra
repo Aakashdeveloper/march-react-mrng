@@ -230,3 +230,4 @@ https://docs.github.com/en/developers/apps/authorizing-oauth-apps
 
 {graphQl}
 https://www.youtube.com/c/DeveloperFunnel/videos
+npm i apollo-boost apollo-graphql graphql graphql-tag react-apollo

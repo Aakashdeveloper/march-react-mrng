@@ -11,7 +11,8 @@ class Details extends Component{
         super()
 
         this.state={
-            details:''
+            details:'',
+            listId: sessionStorage.getItem('tripId')
         }
     }
     render(){
@@ -51,7 +52,7 @@ class Details extends Component{
                                 <h3>Phn: 97776642443</h3>
                             </TabPanel>
                         </Tabs>
-                        <Link to="/" className="btn btn-danger">Back</Link> &nbsp;
+                        <Link to={`/list/${this.props.match.params.id}`} className="btn btn-danger">Back</Link> &nbsp;
                         <Link to={`/booking/${details.name}`} className="btn btn-success">Proceed</Link>
                     </div>
                 </div>
