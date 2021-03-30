@@ -9,7 +9,7 @@ class PlaceOrder extends Component{
         this.state={
             id:Math.floor(Math.random()*100000),
             hotel_name:this.props.match.params.hotel_name,
-            name:'',
+            name:sessionStorage.getItem('username'),
             phone:'',
             cost:sessionStorage.getItem('cost')
         }

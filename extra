@@ -8,20 +8,20 @@ Npm
 React = 3
 Mock API
 json-server
-/////////////////////////////
-React-JWT(Login Logout)-2
 React-GraphQL-1
+React-JWT(Login Logout)-2
 Depolyment
 -> MERN
 -> Docker
 -> heroku
 -> Nginx
 Github
+/////////////////////////////
 React_hooks -1
-React-Redux =1
+Basic React Native=1
 
 React-Redux =1
-Basic React Native=1
+React-Redux =1
 Testing Jest Enzime
 React-Saga -1
 React-with-typescript-1
@@ -231,3 +231,27 @@ https://docs.github.com/en/developers/apps/authorizing-oauth-apps
 {graphQl}
 https://www.youtube.com/c/DeveloperFunnel/videos
 npm i apollo-boost apollo-graphql graphql graphql-tag react-apollo
+
+
+//////////
+npm run build
+
+
+// first time ///
+git init
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/Aakashdeveloper/marchprod.git
+git push -u origin master
+
+git add .
+git commit -m "first commit"
+git push
+
+git pull 
+
+git clone https://github.com/Aakashdeveloper/marchprod.git
+
+docker build . -t appname
+docker run -p 9900:3000 appname
+

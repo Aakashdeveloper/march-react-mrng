@@ -1,9 +1,9 @@
 import React,{Component} from 'react';
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 
 class Header extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
 
         this.state={
             username:'',
@@ -24,7 +24,7 @@ class Header extends Component {
             return(
                 <li>
                     <a href="">
-                        <img src='' style={{height:50,width:50}}/>
+                        <img src={this.state.imageurl} style={{height:50,width:50}}/>
                         Hi {sessionStorage.getItem('username')}
                     </a>
                 </li>
@@ -34,6 +34,7 @@ class Header extends Component {
 
 
     render(){
+        console.log(">>>>>",this.props)
         return(
             <div>
                 <nav className="navbar navbar-inverse">
@@ -59,7 +60,32 @@ class Header extends Component {
             </div>
         )
     }
+
+    componentDidMount(){
+        const code = (this.props.location.search).split('=')[1];
+        if(code){
+            let requestData={
+                code:code
+            }
+            fetch('http://localhost:9900/oauth',{
+                method:'POST',
+                headers:{
+                    'Accept':'application/json',
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify(requestData)
+            })
+            .then((res) => res.json())
+            .then((data) => {
+                var user = data.name;
+                var img = data.avatar_url;
+                sessionStorage.setItem('username',user)
+                this.setState({username:user,imageurl:img})
+            })
+        }
+    }
+    
     
 }
 
-export default Header;
+export default withRouter(Header);
