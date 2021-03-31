@@ -16,8 +16,8 @@ Depolyment
 -> heroku
 -> Nginx
 Github
-/////////////////////////////
 React_hooks -1
+/////////////////////////////
 Basic React Native=1
 
 React-Redux =1
@@ -255,3 +255,25 @@ git clone https://github.com/Aakashdeveloper/marchprod.git
 docker build . -t appname
 docker run -p 9900:3000 appname
 
+
+create-react-native-app mymobi
+
+> npm i -g create-react-native-app
+> create-react-native-app mymobi
+> npm run web
+> https://apps.apple.com/us/app/expo-go/id982107779
+
+https://reactnative.dev/
+
+
+>>>>>>>>>>>><<<<<<<<<<<<<<<<
+Redux
+
+> state management
+> structure 
+> Testing 
+
+> view (display)
+> action (all api call happen here)
+> reducer (check and update store)
+> store (maintain state)
