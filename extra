@@ -18,10 +18,9 @@ Depolyment
 Github
 React_hooks -1
 Basic React Native=1
+React-Redux =1
+React-Redux =1
 /////////////////////////////
-
-React-Redux =1
-React-Redux =1
 Testing Jest Enzime
 React-Saga -1
 React-with-typescript-1
@@ -277,3 +276,11 @@ Redux
 > action (all api call happen here)
 > reducer (check and update store)
 > store (maintain state)
+
+npm i react-redux redux
+
+npm i react-redux redux react-router-dom redux-logger redux-promise
+npm i enzyme enzyme-adapter-react-16 react-addons-test-utils react-test-renderer
+
+// 13 april
+https://us02web.zoom.us/j/5588867882?pwd=TEtYR2czVUovV2t5ekFPWHZBdlo0Zz09
