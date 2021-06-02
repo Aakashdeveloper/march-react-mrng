@@ -15,6 +15,12 @@ class Details extends Component{
             listId: sessionStorage.getItem('tripId')
         }
     }
+
+    handleChange = (event) => {
+        console.log(event.target.outerText)
+        //this.setState({[event.target.name]:event.target.value})
+    }
+
     render(){
         // let details = this.state.details
         let {details} = this.state
@@ -40,6 +46,7 @@ class Details extends Component{
                             <TabList>
                                 <Tab>Description</Tab>
                                 <Tab>Contact</Tab>
+                                <Tab>Aminities</Tab>
                             </TabList>
 
                             <TabPanel>
@@ -51,6 +58,17 @@ class Details extends Component{
                                 <h3>{details.address}</h3>
                                 <h3>Phn: 97776642443</h3>
                             </TabPanel>
+                            <TabPanel>
+                                <button onClick={this.handleChange}>Wifi   <span className="glyphicon glyphicon-plus"></span>
+                                </button><br/><br/>
+                                <button onClick={this.handleChange}>AC   <span className="glyphicon glyphicon-plus"></span>
+                                </button><br/><br/>
+                                <button onClick={this.handleChange}>Non Smoking   <span className="glyphicon glyphicon-plus"></span>
+                                </button><br/><br/>
+                                <button onClick={this.handleChange}>Hot Water   <span className="glyphicon glyphicon-plus"></span>
+                                </button><br/><br/>
+                            </TabPanel>
+
                         </Tabs>
                         <Link to={`/list/${this.props.match.params.id}`} className="btn btn-danger">Back</Link> &nbsp;
                         <Link to={`/booking/${details.name}`} className="btn btn-success">Proceed</Link>
