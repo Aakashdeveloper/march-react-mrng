@@ -12,16 +12,52 @@ class Details extends Component{
 
         this.state={
             details:'',
-            listId: sessionStorage.getItem('tripId')
+            listId: sessionStorage.getItem('tripId'),
+            aminities: ['WiFi','Non Smoking','Hot Water','AC'],
+            items:[]
         }
     }
 
     handleChange = (event) => {
-        console.log(event.target.outerText)
-        //this.setState({[event.target.name]:event.target.value})
+        console.log("event>>>", event)
+        console.log("event.target.outerText>>",event.target.outerText)
+        this.setState({items: [...this.state.items, event.target.outerText]});
+    }
+
+    handleRemove = (event) => {
+        console.log("remove>>>>>>",event.target.outerText)
+        var index = this.state.items.indexOf(event.target.outerText);
+        console.log("index>>>>>>",index)
+        if (index !== -1) {
+            var out = this.state.items.splice(index, 1); 
+        }
+        this.setState({items: [...this.state.items, out]});
+        console.log(">>>>array111", this.state.items)
+    }
+
+    renderCart = (data) => {
+        if(data){
+            return data.map((item) => {
+                return(
+                    <button type="button" class="btn btn-primary" onClick={this.handleRemove}>{item} <span className="glyphicon glyphicon-minus"></span></button>
+                )
+            })
+        }
+    }
+
+    renderAminities = (data) => {
+        if(data){
+            return data.map((item) => {
+                return(
+                <p onClick={this.handleChange}>{item} <span className="glyphicon glyphicon-plus"></span>
+                    </p>
+                )
+            })
+        }
     }
 
     render(){
+        console.log(">>>>array", this.state)
         // let details = this.state.details
         let {details} = this.state
         return(
@@ -39,6 +75,9 @@ class Details extends Component{
                                 <h3>{details.name}</h3>
                                 <h3>{details.locality}</h3>
                                 <h3>{details.address}</h3>
+                            </div>
+                            <div className="col-md-12">
+                                {this.renderCart(this.state.items)}
                             </div>
                         </div>
                         <hr/>
@@ -59,14 +98,7 @@ class Details extends Component{
                                 <h3>Phn: 97776642443</h3>
                             </TabPanel>
                             <TabPanel>
-                                <button onClick={this.handleChange}>Wifi   <span className="glyphicon glyphicon-plus"></span>
-                                </button><br/><br/>
-                                <button onClick={this.handleChange}>AC   <span className="glyphicon glyphicon-plus"></span>
-                                </button><br/><br/>
-                                <button onClick={this.handleChange}>Non Smoking   <span className="glyphicon glyphicon-plus"></span>
-                                </button><br/><br/>
-                                <button onClick={this.handleChange}>Hot Water   <span className="glyphicon glyphicon-plus"></span>
-                                </button><br/><br/>
+                                {this.renderAminities(this.state.aminities)}
                             </TabPanel>
 
                         </Tabs>
