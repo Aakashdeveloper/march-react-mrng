@@ -20,28 +20,44 @@ class Details extends Component{
 
     handleChange = (event) => {
         console.log("event>>>", event)
-        console.log("event.target.outerText>>",event.target.outerText)
-        this.setState({items: [...this.state.items, event.target.outerText]});
+        console.log("event.target.outerText>>",event.target.innerText)
+        if(event.target.innerText == ''){
+            console.log('blank input')
+        }else{
+            this.setState({items: [...this.state.items, event.target.innerText]});
+        }
+        sessionStorage.setItem('cart',this.state.items)
+        
     }
 
     handleRemove = (event) => {
-        console.log("remove>>>>>>",event.target.outerText)
-        var index = this.state.items.indexOf(event.target.outerText);
+        console.log("remove>>>>>>",event.target.innerText)
+        var index = this.state.items.indexOf(event.target.innerText);
         console.log("index>>>>>>",index)
         if (index !== -1) {
-            var out = this.state.items.splice(index, 1); 
+            this.state.items.splice(index, 1); 
         }
-        this.setState({items: [...this.state.items, out]});
+        this.setState({items: []});
+        this.setState({items:  this.state.items});
+        sessionStorage.setItem('cart',this.state.items)
         console.log(">>>>array111", this.state.items)
+
     }
 
     renderCart = (data) => {
+        console.log("inside renderCart,",data)
         if(data){
-            return data.map((item) => {
+            if(data.length>1){
+                return data.map((item) => {
+                    return(
+                        <button type="button" class="btn btn-primary" onClick={this.handleRemove}>{item} <span className="glyphicon glyphicon-minus"></span></button>
+                    )
+                })
+            }else{
                 return(
-                    <button type="button" class="btn btn-primary" onClick={this.handleRemove}>{item} <span className="glyphicon glyphicon-minus"></span></button>
+                    <h3>Please Select Aminities</h3>
                 )
-            })
+            } 
         }
     }
 
@@ -49,8 +65,8 @@ class Details extends Component{
         if(data){
             return data.map((item) => {
                 return(
-                <p onClick={this.handleChange}>{item} <span className="glyphicon glyphicon-plus"></span>
-                    </p>
+                <button onClick={this.handleChange}>{item} <span className="glyphicon glyphicon-plus"></span>
+                    </button>
                 )
             })
         }
