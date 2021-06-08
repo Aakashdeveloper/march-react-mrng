@@ -1,0 +1,82 @@
+{
+  "booking": [
+    {
+      "id": 36175,
+      "hotel_name": "Roseate House",
+      "name": "aakash",
+      "phone": "9643018019",
+      "email": "aakash@gmail.com",
+      "cost": "8399",
+      "tax": "TXN_SUCCESS",
+      "status": "TXN_SUCCESS",
+      "date": "2021-06-08%2000:53:49.0",
+      "bank": "NKMB"
+    },
+    {
+      "id": 68194,
+      "hotel_name": "JW Marriott Chandigarh",
+      "name": "aakash",
+      "phone": "9643018019",
+      "email": "aakash@gmail.com",
+      "cost": "6599",
+      "status": "TXN_SUCCESS",
+      "date": "2021-06-08%2001:00:38.0",
+      "bank": "SBI"
+    },
+    {
+      "id": 7983,
+      "hotel_name": "Hometel Chandigarh",
+      "name": "aakash",
+      "phone": "9643018019",
+      "email": "aakash@gmail.com",
+      "cost": "2419",
+      "status": "TXN_SUCCESS",
+      "date": "2021-06-08%2001:01:22.0",
+      "bank": "ICICI"
+    },
+    {
+      "id": 97822,
+      "hotel_name": "DoubleTree by Hilton",
+      "name": "aakash",
+      "phone": "9643018019",
+      "email": "aakash@gmail.com",
+      "cost": "2419",
+      "status": "TXN_FAILURE",
+      "date": "2021-06-08%2001:02:15.0",
+      "bank": "BHARAT"
+    },
+    {
+      "id": 42676,
+      "hotel_name": "Hometel Chandigarh",
+      "name": "aakash",
+      "phone": "9643018019",
+      "email": "aakash@gmail.com",
+      "cost": "2419",
+      "status": "TXN_SUCCESS",
+      "date": "2021-06-08%2001:04:07.0",
+      "bank": "HDFC"
+    },
+    {
+      "id": 23666,
+      "hotel_name": "Hometel Chandigarh",
+      "name": "bhumika",
+      "phone": "9643018019",
+      "email": "bhumika@gmail.com",
+      "cost": "2419",
+      "status": "TXN_SUCCESS",
+      "date": "2021-06-08%2001:05:27.0",
+      "bank": "PNB"
+    },
+    {
+      "id": 97202,
+      "hotel_name": "Roseate House",
+      "name": "aakash",
+      "phone": "9643018019",
+      "email": "aakash@gmail.com",
+      "cost": "8399",
+      "status": "TXN_SUCCESS",
+      "date": "2021-06-08%2007:12:35.0",
+      "bank": "SBI"
+    }
+  ]
+}

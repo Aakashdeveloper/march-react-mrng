@@ -11,6 +11,10 @@ const BookingView = (props) => {
                         <td>{item.name}</td>
                         <td>{item.phone}</td>
                         <td>Rs.{item.cost}</td>
+                        <td>{item.date}</td>
+                        <td>{item.status}</td>
+                        <td>{item.bank}</td>
+
                     </tr>
                 )
             })
@@ -28,6 +32,9 @@ const BookingView = (props) => {
                         <th>Name</th>
                         <th>Phone</th>
                         <th>Cost</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Bank</th>
                     </tr>
                 </thead>
                 <tbody>

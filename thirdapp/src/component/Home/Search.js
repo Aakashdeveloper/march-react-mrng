@@ -8,7 +8,7 @@ const hotelUrl = "https://developerfunnel.herokuapp.com/hotels?city="
 class Search extends Component{
     constructor(){
         super()
-        console.log(">>>>>>inside constructor ")
+        //console.log(">>>>>>inside constructor ")
         this.state={
             location : '',
             hotels : ''
@@ -53,7 +53,7 @@ class Search extends Component{
     }
     
     render(){
-        console.log(">>>>>>inside render ")
+        //console.log(">>>>>>inside render ")
         return(
             <div className="imageContainer">
                 <div id="logo">
@@ -78,7 +78,7 @@ class Search extends Component{
 
     // onload call api 
     componentDidMount(){
-        console.log(">>>>>>inside componentDidMount ")
+        //console.log(">>>>>>inside componentDidMount ")
         fetch(url,{method:'GET'})
         .then((res) =>  res.json())
         .then((data) => {

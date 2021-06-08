@@ -1,13 +1,17 @@
 import React,{Component} from 'react';
 import {Link, withRouter} from 'react-router-dom'
 
+const url = "http://localhost:5000/api/auth/userinfo";
+
 class Header extends Component {
     constructor(props){
         super(props)
 
         this.state={
             username:'',
-            imageurl:''
+            imageurl:'',
+            userdata:'',
+            dummy:''
         }
     }
     
@@ -32,9 +36,43 @@ class Header extends Component {
         }
     }
 
+    handleLogout = () => {
+        this.setState({userdata:''})
+        sessionStorage.removeItem('ltk')
+        sessionStorage.removeItem('userData')
+        this.props.history.push('/');
+        
+    }
+
+
+    conditionalLogin = () => {
+        console.log("conditionalLogin>>>>>>",this.state.userdata.name)
+        if(this.state.userdata.name){
+            let data = this.state.userdata
+            let outputarray = [data.name,data.email,data.phone,data.role]
+            sessionStorage.setItem('userData',outputarray)
+            return(
+                <>
+                    <li><Link>{this.state.userdata.name}</Link></li>
+                    <li><button onClick={this.handleLogout}>LogOut</button></li>
+                </>
+            )
+        }else{
+            return(
+                <>
+                    <li><Link to="/login">Login</Link></li>
+                    <li><Link to="/signup">SignUp</Link></li>
+                </>
+            )
+        }
+    }
+
+   
 
     render(){
-        console.log(">>>>>",this.props)
+        //console.log(">>>>>",this.props)
+        console.log(">>>>>in render>>>>>>>")
+        console.log(">>>>>",this.state)
         return(
             <div>
                 <nav className="navbar navbar-inverse">
@@ -50,9 +88,11 @@ class Header extends Component {
                         <div className="collapse navbar-collapse" id="myNavbar">
                             <ul className="nav navbar-nav">
                                 <li><Link to="/">Home</Link></li>
+                                <li><Link to="/viewBooking">Bookings</Link></li>
                             </ul>
                             <ul className="nav navbar-nav navbar-right">
-                                {this.conditionalHeader()}
+                              
+                                {this.conditionalLogin()}
                             </ul>
                         </div>
                     </div>
@@ -62,6 +102,8 @@ class Header extends Component {
     }
 
     componentDidMount(){
+        //this.setState({dummy:'test'})
+        //console.log(">>>>>",sessionStorage.getItem('ltk'))
         const code = (this.props.location.search).split('=')[1];
         if(code){
             let requestData={
@@ -83,6 +125,19 @@ class Header extends Component {
                 this.setState({username:user,imageurl:img})
             })
         }
+
+        fetch(url,{
+            method:'GET',
+            headers:{
+                'x-access-token':sessionStorage.getItem('ltk')
+            }
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            this.setState({
+                userdata:data
+            })
+        })
     }
     
     

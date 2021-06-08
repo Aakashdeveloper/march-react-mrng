@@ -11,10 +11,12 @@ router.use(bodyParser.json());
 
 //Register User
 router.post('/register',(req,res) => {
+    console.log(req.body)
     var hashedpassword = bcrypt.hashSync(req.body.password,8);
     User.create({
         name:req.body.name,
         email:req.body.email,
+        phone:req.body.phone,
         password:hashedpassword,
         role: req.body.role ?req.body.role :'User'
     },(err,result) => {
@@ -48,7 +50,7 @@ router.get('/userInfo',(req,res) => {
         if(err) return res.status(500).send({auth:false,token:'Invalid Token Provided'});
         User.findById(data.id,{password:0},(err,user) => {
             if(err) return res.status(500).send({auth:false,token:'err fetching user'});
-            res.send(user)
+            res.json(user)
         })
     })
 })
@@ -58,6 +60,13 @@ router.get('/users',(req,res) => {
     User.find({},(err,user) => {
         if(err) throw err;
         res.send(user);
+    })
+})
+
+router.delete('/delete',(req,res) => {
+    User.remove({},(err,data)=>{
+        if(err) throw err;
+        res.send('data deleted');
     })
 })
 
